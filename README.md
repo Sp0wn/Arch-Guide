@@ -7,6 +7,23 @@ I've also added some recommendations for customizing the OS.
 
 # Table of contents
 
+- [Keyboard layout](#keyboard-layout)
+- [Boot mode](#boot-mode)
+- [Internet connection](#internet-connection)
+- [Update clock](#update-clock)
+- [Set partitions](#set-partitions)
+- [Format partitions](#format-partitions)
+- [Mount partitions](#mount-partitions)
+- [Mirror selection](#mirror-selection)
+- [Essential packages](#essential-packages)
+- [Filesystem table](#filesystem-table)
+- [Change root](#change-root)
+- [Time configuration](#time-configuration)
+- [Localization configuration](#localization-configuration)
+- [Network configuration](#network-configuration)
+- [Root password](#root-password)
+- [Boot loader](#boot-loader)
+
 # Pre-installation
 
 ## Keyboard layout
