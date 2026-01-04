@@ -133,6 +133,24 @@ mount /dev/[efi] /mnt/boot
 By default all the mirrors are enable and ordered by fastest, however
 it can be modified in the `/etc/pacman.d/mirrorlist` file.
 
+## Essential packages
+
+To have the minimal CLI Arch Linux system there are only three packages
+needed, however more packages are usually needed to have full functionality.
+
+```bash
+pacstrap -K /mnt base linux linux-firmware
+```
+
+| Functionalities | Packages                          |
+| --------------- | --------------------------------- |
+| Microcode       | `amd-ucode`, `intel-ucode`        |
+| Network         | `networkmanager`, `dhcpcd`        |
+| Text editor     | `vi`, `nano`                      |
+| Documentation   | `man-db`, `man-pages`             |
+| Boot            | `grub`, `efibootmgr`, `os-prober` |
+| Filesystem      | `fsck`, `ntfs-3g`                 |
+
 # Configuration
 
 # Post-installation
