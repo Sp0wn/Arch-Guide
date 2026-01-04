@@ -207,4 +207,12 @@ To work in networked environments, an identifier must be assigned to the system.
 echo "[hostname]" > /etc/hostname
 ```
 
+## Root password
+
+In order to use the root user, a password must be assigned.
+
+```bash
+passwd
+```
+
 # Post-installation
