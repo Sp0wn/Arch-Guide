@@ -79,6 +79,31 @@ timedatectl status
 timedatectl set-ntp true
 ```
 
+## Set partitions
+
+The partition table will look different depending on the type of system
+and structure. Disk can be listed and partition with `fdisk`.
+
+```
+fdisk -l
+fdisk /dev/[disk]
+```
+
+### MBR
+
+| Partition     | Mounting point |
+| ------------- | -------------- |
+| /dev/[root]   | /              |
+| /dev/[swap]   | [SWAP]         |
+
+### GPT
+
+| Partition     | Mounting point |
+| ------------- | -------------- |
+| /dev/[root]   | /              |
+| /dev/[efi]    | /boot          |
+| /dev/[swap]   | [SWAP]         |
+
 # Installation
 
 # Configuration
