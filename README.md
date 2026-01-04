@@ -185,4 +185,17 @@ Then it can be generated into `/etc/adjtime` with the system clock.
 hwclock --systohc
 ```
 
+## Localization configuration
+
+To set specific formats like dates or currency, it is needed to set and 
+generated the appropiate locales, first by editing the `/etc/locale.gen` file
+and uncommenting the used locales to then generate them. Also some configuration
+files need to be created like `/etc/locale.conf` and `/etc/vconsole.conf`.
+
+```bash
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+echo "KEYMAP=us" > /etc/vconsole.conf
+```
+
 # Post-installation
