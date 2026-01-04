@@ -162,4 +162,12 @@ to be saved under the new OS with `genfstab`.
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
+## Change root
+
+To directly interact with the new system, change into the new root.
+
+```bash
+arch-chroot /mnt
+```
+
 # Post-installation
