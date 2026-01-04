@@ -84,7 +84,7 @@ timedatectl set-ntp true
 The partition table will look different depending on the type of system
 and structure. Disk can be listed and partition with `fdisk`.
 
-```
+```bash
 fdisk -l
 fdisk /dev/[disk]
 ```
@@ -103,6 +103,15 @@ fdisk /dev/[disk]
 | /dev/[root]   | /              |
 | /dev/[efi]    | /boot          |
 | /dev/[swap]   | [SWAP]         |
+
+## Format partitions
+
+Depending on the filesystem, different formats may be used.
+
+```bash
+mkfs.ext4 /dev/[root]
+mkswap /dev/[swap]
+```
 
 # Installation
 
