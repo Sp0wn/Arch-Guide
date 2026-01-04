@@ -230,3 +230,12 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 # Post-installation
+
+Some good post-installation steps are:
+
+1. Setting up users and groups
+2. Installing a desktop environment
+3. Changing the default shell
+4. Install new fonts and themes
+5. Install external package managers
+6. Install utilities and media apps
