@@ -128,6 +128,11 @@ mount /dev/[efi] /mnt/boot
 
 # Installation
 
+## Mirror selection
+
+By default all the mirrors are enable and ordered by fastest, however
+it can be modified in the `/etc/pacman.d/mirrorlist` file.
+
 # Configuration
 
 # Post-installation
