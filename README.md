@@ -14,11 +14,15 @@ I've also added some recommendations for customizing the OS.
 The keyboard layouts are stored in the keymaps directory which
 is `/usr/share/kbd/keymaps/`. Then it is divided in 
 architecture, then in layouts, and then languages. Available 
-layouts can be listed with `localectl list-keymaps`. In order to 
-change to layout use `loadkeys` and the name of the file.
+layouts can be listed with `localectl`. 
 
-```
+```bash
 localectl list-keymaps
+```
+
+In order to change to layout use `loadkeys` and the name of the file.
+
+```bash
 loadkeys us
 ```
 
@@ -27,8 +31,42 @@ loadkeys us
 To verify the boot mode is UEFI check the UEFI bitness, if 
 there is no output, then the boot mode is BIOS.
 
-```
+```bash
 cat /sys/firmware/efi/fw_platform_size
+```
+
+## Internet connection
+
+First check that our NIC is enabled.
+
+```bash
+ip link
+```
+
+If it is not running, manually start it.
+
+```bash
+ip link set [interface] up
+```
+
+Ethernet is usually working, however WiFi needs to be set up.
+Depending on the encryption protocol, different tools are needed.
+First scan for available networks, then connect to the network, and
+finally get a local IP assigned. Test the connection with `ping`.
+
+```bash
+iwlist [interface] scan
+
+# Open/WEP
+iwconfig [interface] essid [SSID] key s:[PASSWORD]
+
+# WPA/WPA2
+wpa_passphrase [SSID] [PASSWORD] > /etc/wifi
+wpa_supplicant -B -i [interface] -c /etc/wifi
+
+dhclient
+
+ping 8.8.8.8
 ```
 
 # Installation
