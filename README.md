@@ -215,4 +215,18 @@ In order to use the root user, a password must be assigned.
 passwd
 ```
 
+## Boot loader
+
+In order to boot into the OS, a bootloader needs to be installed.
+
+```bash
+# BIOS
+grub-install /dev/[disk]
+
+# UEFI
+grub-install --target=x86_64-efi --efi-directory=/[efi] --bootloader-id=GRUB
+
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 # Post-installation
