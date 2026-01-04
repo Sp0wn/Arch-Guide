@@ -113,6 +113,19 @@ mkfs.ext4 /dev/[root]
 mkswap /dev/[swap]
 ```
 
+## Mount partitions
+
+All the formated partitions must be mounted into their respective 
+paths before installation.
+
+```bash
+mount /dev/[root] /mnt
+swapon /dev/[swap] 
+
+# If UEFI system
+mount /dev/[efi] /mnt/boot
+```
+
 # Installation
 
 # Configuration
