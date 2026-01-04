@@ -22,6 +22,15 @@ localectl list-keymaps
 loadkeys us
 ```
 
+## Boot mode
+
+To verify the boot mode is UEFI check the UEFI bitness, if 
+there is no output, then the boot mode is BIOS.
+
+```
+cat /sys/firmware/efi/fw_platform_size
+```
+
 # Installation
 
 # Configuration
