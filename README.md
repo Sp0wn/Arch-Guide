@@ -194,8 +194,17 @@ files need to be created like `/etc/locale.conf` and `/etc/vconsole.conf`.
 
 ```bash
 locale-gen
+
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "KEYMAP=us" > /etc/vconsole.conf
+```
+
+## Network configuration
+
+To work in networked environments, an identifier must be assigned to the system.
+
+```bash
+echo "[hostname]" > /etc/hostname
 ```
 
 # Post-installation
