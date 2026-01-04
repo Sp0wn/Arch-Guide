@@ -37,7 +37,7 @@ cat /sys/firmware/efi/fw_platform_size
 
 ## Internet connection
 
-First check that our NIC is enabled.
+First check that the NIC is enabled.
 
 ```bash
 ip link
@@ -67,6 +67,16 @@ wpa_supplicant -B -i [interface] -c /etc/wifi
 dhclient
 
 ping 8.8.8.8
+```
+
+## Update clock
+
+To ensure correct installation, an updated system clock is needed 
+therefore it must be synchronized using `timedatectl`.
+
+```bash
+timedatectl status
+timedatectl set-ntp true
 ```
 
 # Installation
