@@ -153,4 +153,13 @@ pacstrap -K /mnt base linux linux-firmware
 
 # Configuration
 
+## Filesystem table
+
+In order to keep track of the filesystem structure, it is needed 
+to be saved under the new OS with `genfstab`.
+
+```bash
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+
 # Post-installation
