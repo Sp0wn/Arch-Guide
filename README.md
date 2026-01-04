@@ -170,4 +170,19 @@ To directly interact with the new system, change into the new root.
 arch-chroot /mnt
 ```
 
+## Time configuration
+
+To show the correct local time, set the link to the timezone file in
+the `/usr/share/zoneinfo` divided into area and then location.
+
+```bash
+ln -sf /usr/share/zoneinfo/[Area]/[Location] /etc/localtime
+```
+
+Then it can be generated into `/etc/adjtime` with the system clock.
+
+```bash
+hwclock --systohc
+```
+
 # Post-installation
